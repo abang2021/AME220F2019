@@ -12,10 +12,11 @@
     <h1>Albert Bang</h1>
         <p>abang1@asu.edu</p>
     <img src="https://scontent.fphx1-2.fna.fbcdn.net/v/t1.0-9/69067636_674795282989582_98654441011412992_n.jpg?_nc_cat=104&amp;_nc_oc=AQnApVC_YZwLra6luS_WxZntf5q3MUgTvmRqqsrJsdfq91siuNNeXDC2a4vS7_IjcUA&amp;_nc_ht=scontent.fphx1-2.fna&amp;oh=80b443f4e0a0c92a0c6cc422f914aeee&amp;oe=5DFB9729" style="width: 333px; height: 333px;">
-
+body {background-color: lightblue;
+}
 
 </body>
-<li>I go to school here<li>
+<li>I go to school hereeeeeeeeeee<li>
 
 <a href='https://goo.gl/maps/w78CUpJb5cBtJNtEA'> target="_blank">976 S Forest Mall, Tempe, AZ 85281</a>
 
