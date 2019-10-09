@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 <title>W3.CSS</title>
@@ -19,7 +20,7 @@
 
 <div id="Name" class="w3-container city">
   <h2>Name</h2>
-    <p style="color:DodgerBlue;">My name is Albert Bang</p>
+    <p style="color:DodgerBlue;">Albert Bang</p>
 </div>
 
 <div id="Contact" class="w3-container city" style="display:none">
@@ -101,7 +102,7 @@ p {
   <tr>
     <td>Junior</td>
     <td>MS3</td>
-    
+
   </tr>
 </table>
   </body>
