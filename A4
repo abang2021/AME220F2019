@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <title>Slide Show</title>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+<script>
+var currentSlide = 1;
+function goToSlide(n)
+{
+//  $(".img").fadeOut();
+//  $(".img:nth-of-type(" + n + ")").stop().fadeIn();
+$("#firstSlide").animate({"margin-left": (n-1)*-100 + "vw"}, 1000);
+  $(".num").removeClass("selected");
+  $(".num:nth-of-type(" + n + ")").addClass("selected");
+  currentSlide = n;
+}
+function goPrev()
+{
+    var nextSlide = currentSlide - 1
+    if(nextSlide == 0){
+      nextSlide = 4;
+    }
+    goToSlide(nextSlide);
+}
+function goNext()
+{
+  var nextSlide = currentSlide + 1
+  if(nextSlide == 5){
+    nextSlide = 1;
+  }
+  goToSlide(nextSlide);
+}
+</script>
+
+<style>
+body{
+  margin:0;
+  width: 400vw;
+  overflow: hidden;
+}
+#prev{
+  position:fixed;
+  left: 10px;
+  bottom: 10px;
+}
+#next{
+  position:fixed;
+  right: 10px;
+  bottom: 10px;
+}
+.img{
+  display: inline-block;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size:contain;
+}
+.num:nth-of-type(1).selected{
+  background: green;
+  font-size: 26px;
+  font-weight: bold;
+}
+.num:nth-of-type(2).selected{
+  background: gold;
+  font-size: 26px;
+  font-weight: bold;
+}.num:nth-of-type(3).selected{
+  background: red;
+  font-size: 26px;
+  font-weight: bold;
+}.num:nth-of-type(4).selected{
+  background: blue;
+  font-size: 26px;
+  font-weight: bold;
+}
+#numWrapper{
+  width: calc(100% - 200px);
+    bottom: 10px;
+    position: fixed;
+    margin-left: 100px;
+    text-align: center;
+}
+button.num{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 20px;
+}
+</style>
+</head>
+
+<body onload='goToSlide(1)'>
+  <div id='firstSlide' class='img' style='background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Aegotheles_chrisoptus_-_Catlereigh_Nature_Reserve.jpg/300px-Aegotheles_chrisoptus_-_Catlereigh_Nature_Reserve.jpg)'></div>
+  <div class='img' style='background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Turnix_varius_-_Castlereigh_nature_reserve.jpg/450px-Turnix_varius_-_Castlereigh_nature_reserve.jpg)'></div>
+  <div class='img' style='background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg/450px-Acanthorhynchus_tenuirostris_-_Mogo_Campground.jpg)'></div>
+  <div class='img' style='background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Eopsaltria_australis_-_Mogo_Campground.jpg/450px-Eopsaltria_australis_-_Mogo_Campground.jpg)'></div>
+  <button id='prev' onclick='goPrev()'> Prev </button>
+  <button id='next' onclick='goNext()'> Next </button>
+
+  <div id='numWrapper'>
+    <button class='num' onclick=goToSlide(1);> 1 </button>
+    <button class='num' onclick=goToSlide(2);> 2 </button>
+    <button class='num' onclick=goToSlide(3);> 3 </button>
+    <button class='num' onclick=goToSlide(4);> 4 </button>
+
+  </div>
+</html>
