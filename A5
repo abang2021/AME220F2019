@@ -18,9 +18,9 @@ var x = document.getElementsByClassName("mySlides");
 if (n > x.length) {slideIndex = 1}
 if (n < 1) {slideIndex = x.length}
 for (i = 0; i < x.length; i++) {
-  x[i].style.display = "none";
+  x[i].style.opacity = "0";
 }
-x[slideIndex-1].style.display = "block";
+x[slideIndex-1].style.opacity = "1";
 }
 function currentSlide(n) {
   showDivs(slideIndex = n);
@@ -30,6 +30,7 @@ function currentSlide(n) {
 </script>
 
 <style>
+
 body{
   margin:0;
 }
@@ -47,6 +48,8 @@ img{
   display: block;
   position:absolute;
   width: 100%;
+  transition:-property: opacity;
+  transition-duration: 3s;
 }
 .selected{
   background: gold;
@@ -70,10 +73,10 @@ img{
   <button id='next' onclick="plusDivs(1)"> Next </button>
 
   <div id='numWrapper'>
-    <button class='num' onclick="currentSlide(1)"> 1 </button>
-    <button class='num' onclick="currentSlide(2)"> 2 </button>
-    <button class='num' onclick="currentSlide(3)"> 3 </button>
-    <button class='num' onclick="currentSlide(4)"> 4 </button>
+    <button style='background-color:red'; class='num' onclick="currentSlide(1)"> 1 </button>
+    <button style='background-color:green'; class='num' onclick="currentSlide(2)"> 2 </button>
+    <button style='background-color:blue'; class='num' onclick="currentSlide(3)"> 3 </button>
+    <button style='background-color:yellow';class='num' onclick="currentSlide(4)"> 4 </button>
 </body>
   </div>
 </html>
